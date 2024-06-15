@@ -1,0 +1,71 @@
+﻿{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "vcpkg",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-windows",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "vcpkg_x86",
+      "binaryDir": "${sourceDir}/build",
+      "architecture": "WIN32",
+      "cacheVariables": {
+        "VCPKG_TARGET_TRIPLET ": "x86-windows",
+        "VCPKG_HOST_TRIPLET": "x86-windows",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "conan",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/build/conan_toolchain.cmake",
+        "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "conan_x86",
+      "binaryDir": "${sourceDir}/build",
+      "architecture": "WIN32",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/build/conan_toolchain.cmake",
+        "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+            {
+            "name": "x64-Debug",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "ZLIB_LIBRARY": "F:/Tools/zlib/lib/zlibstatic.lib",
+                "ZLIB_INCLUDE_DIR": "F:/Tools/zlib/include",
+                "ZCONF_INCLUDE": "F:/Tools/zlib/include",
+                "QUAZIP_BZIP2": "OFF",
+                "QUAZIP_FETCH_LIBS": "OFF",
+                "CMAKE_PREFIX_PATH": "E:/MySoftware/Qt/Qt6.5.2/6.5.2/msvc2019_64"
+            }
+
+        },
+        {
+            "name": "x64-Release",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "ZLIB_LIBRARY": "F:/Tools/zlib/lib/zlibstatic.lib",
+                "ZLIB_INCLUDE_DIR": "F:/Tools/zlib/include",
+                "ZCONF_INCLUDE": "F:/Tools/zlib/include",
+                "QUAZIP_BZIP2": "OFF",
+                "QUAZIP_FETCH_LIBS": "OFF",
+                "CMAKE_PREFIX_PATH": "E:/MySoftware/Qt/Qt6.5.2/6.5.2/msvc2019_64"
+            }
+        }
+  ]
+}
